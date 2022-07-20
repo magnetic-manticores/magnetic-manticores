@@ -10,6 +10,8 @@ env
 
 # Unittest reports
 .coverage*
+coverage*
+junit*
 
 # Logs
 *.log
