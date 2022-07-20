@@ -160,7 +160,7 @@ Once the environment is activated, all the commands listed previously should wor
 
 If you wish to use Pipenv or Poetry, you will have to move the dependencies in `dev-requirements.txt` to the development dependencies of your tool.
 
-We've included a porting of `dev-requirements.txt` to both [poetry](./samples/pyproject.toml) and [pipenv](./samples/Pipfile) in the [samples folder](./samples).
+We've included a porting of `dev-requirements.txt` to both [poetry](./samples/pyproject.toml) and [pipenv](Pipfile) in the [samples folder](./samples).
 If you use the poetry setup, make sure to change the project name, description, and authors at the top of the file.
 
 When installing new dependencies, don't forget to [pin them](https://pip.pypa.io/en/stable/user_guide/#pinned-version-numbers) by adding a version tag at the end.
