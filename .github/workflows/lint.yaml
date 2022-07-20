@@ -19,7 +19,7 @@ jobs:
 
     env:
       # The Python version your project uses. Feel free to change this if required.
-      PYTHON_VERSION: "3.10"
+      PYTHON_VERSION: '3.10'
 
     steps:
       # Checks out the repository in the current folder.
@@ -34,3 +34,6 @@ jobs:
 
       - name: Run pre-commit hooks
         uses: pre-commit/action@v3.0.0
+
+      - name: Check code coverage
+        uses: codecov/codecov-action@v2
