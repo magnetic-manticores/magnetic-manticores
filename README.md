@@ -12,7 +12,7 @@ And this repository is part of [Python Discord Code Jam 2022](https://www.python
 pip install pipenv
 ```
 
-1. Install all requirements
+1. Install all requirements [for development]
 
 ```bash
 pipenv install --dev
