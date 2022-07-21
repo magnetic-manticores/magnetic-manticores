@@ -22,4 +22,4 @@ pipenv install --dev
 
 ```bash
 python -m src.main
-```
+``` TODO: may raise ModuleNotFoundError exceptions depending on project structure
