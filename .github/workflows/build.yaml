@@ -1,0 +1,28 @@
+name: Build Docker image
+
+on:
+  push:
+    branches:
+      - main
+  workflow_run:
+    workflows: [Lint]
+    types:
+      - completed
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      PYTHON_VERSION: '3.10'
+
+    steps:
+      - name: Checks out repository
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build . -t magnetic-manticores
+
+      - name: Publish Docker image
+        run: 'echo "TODO: we need to decide where to publish, or maybe build it on VPS directly?"'
