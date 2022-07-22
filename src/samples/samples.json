@@ -1,0 +1,14 @@
+{
+  "samples": [
+    {
+      "sample_1": {
+        "source": "load func.py as string",
+        "tests": {
+          "deep": "load test_deep.py as string",
+          "shallow": "load test_shalow.py as string"
+        },
+        "metadata": "load metadata.json as string"
+      }
+    }
+  ]
+}
