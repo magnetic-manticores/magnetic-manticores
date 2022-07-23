@@ -1,0 +1,14 @@
+{
+  "prompts": [
+    {
+      "prompt1": {
+        "code": "",
+        "tests": {
+          "deep": "",
+          "shallow": ""
+        },
+        "metadata": {}
+      }
+    }
+  ]
+}
