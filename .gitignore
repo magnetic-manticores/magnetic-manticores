@@ -27,6 +27,7 @@ build/
 # IDEs
 # PyCharm
 .idea/
+.run/
 # VSCode
 .vscode/
 # MacOS
