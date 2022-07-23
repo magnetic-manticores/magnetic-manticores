@@ -1,0 +1,29 @@
+{
+  "name": "magnetic-manticores-client-server",
+  "version": "0.1.0",
+  "description": "NodeJS server which serves static content (i.e. web browser client) for the project. This static content will communicate with the Python websocket server.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magnetic-manticores/magnetic-manticores.git"
+  },
+  "keywords": [
+    "nodejs",
+    "websockets",
+    "html",
+    "css",
+    "js",
+    "npm",
+    "Monaco",
+    "Bootstrap"
+  ],
+  "author": "magnetic-manticores",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magnetic-manticores/magnetic-manticores/issues"
+  },
+  "homepage": "https://github.com/magnetic-manticores/magnetic-manticores#readme"
+}
