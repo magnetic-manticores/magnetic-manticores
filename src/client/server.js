@@ -1,14 +1,8 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 
-const hostname = '127.0.0.1';
-const port = 8000;
+app.use(express.static('static')); // serve the user the ./static folder with all the .html and .js files for local rendering
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(8000, () => {
+  console.log('Server listening on port 8000 (http://127.0.0.1:8000/)');
 });
