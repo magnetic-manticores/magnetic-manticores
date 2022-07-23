@@ -48,5 +48,4 @@ npm start
 ```
 
 ### 4. 👩‍💻 Play!
-Just navigate to **http://127.0.0.1:8000/** to begin! 
-
+Just navigate to **http://127.0.0.1:8000/** to begin!
