@@ -1,8 +1,12 @@
-import { TEST } from "./game.js"
-
-console.log(TEST);
+import { addJoinButton } from "./game.js"
 
 window.addEventListener("DOMContentLoaded", () => {
+  // Misc. loading things
+  // Enable Bootstrap popovers
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+  // Websocket things
   const websocket = new WebSocket("ws://localhost:8001");
 
   // todo: do things with the websocket in this file - i.e. sending/receiving messages
@@ -29,11 +33,15 @@ function initGame(websocket) {
 
 // Handles all events/messages received from websocket
 function receiveMessages(websocket) {
-  websocket.addEventListener("message", ({ msg }) => {
+  websocket.addEventListener("message", ({ data }) => {
     // parse incoming websocket message to JSON
-    const event = JSON.parse(msg);
+    const event = JSON.parse(data);
     switch (event.type) {  // proceed according to event type
       case "init":  // initial game creation; make join/share button
+        const lobbyDiv = document.querySelector(".lobby-actions");
+        addJoinButton(event, lobbyDiv);
+        break;
+      case "startReady":  // both players are in the lobby and waiting to start
         break;
       case "startGame": // both players connected and ready to start game:
         // allocate roles and change live view
@@ -52,6 +60,15 @@ function receiveMessages(websocket) {
         break;
     }
   })
+}
+
+function sendEvent(event, websocket) {
+  // Only send the event if the websocket is still open
+    if (websocket.readyState !== websocket.OPEN) {
+      showAlert("The websocket is no longer open. Please refer to the websocket console.");
+    } else {
+      websocket.send(JSON.stringify(event));
+    }
 }
 
 function showAlert(msg) {
