@@ -1,6 +1,7 @@
 from typing import Optional
 
 from .event import CamelModel, Event
+from .types import EventType
 
 
 class _Payload(CamelModel):
@@ -10,5 +11,7 @@ class _Payload(CamelModel):
 
 class InitEvent(Event):
     """Init event class."""
+
+    type = EventType.INIT
 
     payload: _Payload

@@ -6,3 +6,4 @@ class EventType(Enum):
 
     INIT = "init"
     UPDATE_STATE = "update_state"
+    NEW_PLAYERS = "new_players"
