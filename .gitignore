@@ -32,3 +32,6 @@ build/
 .vscode/
 # MacOS
 .DS_Store
+
+# Frontend stuff
+node_modules/
