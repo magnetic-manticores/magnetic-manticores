@@ -1,0 +1,33 @@
+/* Action buttons */
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 720px;
+  height: 100px;
+}
+
+.action {
+  color: darkgray;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 300;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px;
+  width: 120px;
+}
+
+.action:hover {
+  background-color: darkgray;
+  color: white;
+  font-weight: 700;
+}
+
+.action[href=""] {
+  display: none;
+}
