@@ -1,12 +1,31 @@
 import asyncio as aio
+import json
 
 import websockets as ws
-from game import Game
+
+
+async def submit(websocket):
+    """Receives the submission from the client."""
+    message = await websocket.recv()
+    event = json.loads(message)
+    assert event["type"] == "submit"
+    await process_code(websocket, event["code"])
+
+
+async def process_code(websocket, code: str):
+    """Processes the client submission."""
+    print(f"Message from server {code}")
+    await submit(websocket)
 
 
 async def handler(websocket: ws.WebSocketServerProtocol):
     """Boilerplate message handler"""
-    Game()
+    message = await websocket.recv()
+    event = json.loads(message)
+    assert event["type"] == "init"
+    event = {"type": "init", "message": "Message from server: Hello Client."}
+    await websocket.send(json.dumps(event))
+    await submit(websocket)
 
 
 async def main(port: int):
